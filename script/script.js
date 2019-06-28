@@ -4,8 +4,8 @@ let income = "freelance";
 let addExpenses = "Cat1,cat2,cat3";
 let deposit = false;
 let mission = 1000000;
-let perion =12;
-let budgetDay =money/30;
+let perion = 12;
+let budgetDay = money/30;
 
 console.log( typeof(money) );
 console.log( typeof(income) );
