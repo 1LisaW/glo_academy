@@ -39,10 +39,6 @@ arrayDay.push( ['en',stringEn]);
 let currentString = arrayDay.find(function(elem){ return elem[0]==lang ;});
 console.log(currentString[1]);
 
-let namePerson ='Игорь';
-let personBase = {
-    'Артем': 'Директор',
-    'Максим': 'Преподаватель'
-};
+let namePerson ='Максим';
 
-console.log(( personBase[namePerson] === undefined ) ? 'Студент' : personBase[namePerson] );
+console.log( namePerson=='Артем' ? 'Директор' : namePerson=='Максим' ? 'Преподаватель' : 'Студент');
