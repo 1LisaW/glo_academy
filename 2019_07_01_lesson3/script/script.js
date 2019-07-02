@@ -33,17 +33,11 @@ console.log('budgetDay: ',  Math.floor( budgetDay ));
 if ( budgetDay > 800 ){
     console.log( 'Высокий уровень дохода' );
 }
-else if( budgetDay == 800 ){
-}
 else if( budgetDay > 300 ){
     console.log( 'Средний уровень дохода' );
 }
-else if(budgetDay == 300 ){
-}
-else if(budgetDay > 0 ){
+else if(budgetDay >= 0 ){
     console.log( 'Низкий уровень дохода' );
-}
-else if(budgetDay == 0 ){
 }
 else{
     console.log( 'Что-то пошло не так' );

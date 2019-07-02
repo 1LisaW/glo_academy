@@ -45,17 +45,11 @@ function getStatusIncome( budget ){
     if ( budget > 800 ){
         return( 'Высокий уровень дохода' );
     }
-    else if( budget == 800 ){
-    }
     else if( budget > 300 ){
         return( 'Средний уровень дохода' );
     }
-    else if(budget == 300 ){
-    }
-    else if(budget > 0 ){
+    else if(budget >= 0 ){
         return( 'Низкий уровень дохода' );
-    }
-    else if(budget == 0 ){
     }
     else{
         return( 'Что-то пошло не так' );
