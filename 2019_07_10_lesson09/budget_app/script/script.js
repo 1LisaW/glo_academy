@@ -16,9 +16,7 @@ let incomePeriodValue = document.querySelector('.income_period-value');
 let targetMonthValue = document.querySelector('.target_month-value');
 
 let salaryAmount = document.querySelector('.salary-amount');
-let incomeTitle = document.querySelector('.income-title');
 let incomeItems = document.querySelectorAll('.income-items'); 
-let  expensesTitle = document.querySelector('.expenses-title');
 let expensesItems =document.querySelectorAll('.expenses-items');
 let  expensesAmount = document.querySelector('.expenses-amount');
 let  additionalExpenses = document.querySelector('.additional_expenses');
@@ -26,7 +24,6 @@ let  depositCheck = document.querySelector('.deposit-checkmark');
 let  depositBank = document.querySelector('.deposit-bank');
 let  depositAmount = document.querySelector('.deposit-amount');
 let  depositPercent = document.querySelector('.deposit-percent');
-let  targetTitle= document.querySelector('.target-title');
 let  targetAmount = document.querySelector('.target-amount');
 let  periodSelect = document.querySelector('.period-select');
 let  periodAmount = document.querySelector('.period-amount');
