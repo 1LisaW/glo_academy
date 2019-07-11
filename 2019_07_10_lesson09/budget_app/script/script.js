@@ -240,3 +240,4 @@ inputNumberBlocks.forEach(function(item){
 });
 
 });
+salaryAmount.addEventListener('change',()=>{start.removeAttribute('disabled');});
