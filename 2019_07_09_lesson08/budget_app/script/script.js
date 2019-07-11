@@ -261,3 +261,4 @@ function tostringPositionsOfBudget( obj ){
 // console.log( appData.percentDeposit, appData.moneyDeposit, appData.calcPeriod);
 console.log ('Возможные доходы: '+ tostringPositionsOfBudget(appData.income)+'; возможные расходы: '+
 tostringPositionsOfBudget( appData.addExpenses )+'.');
+salaryAmount.addEventListener('change',()=>{start.removeAttribute('disabled');})
