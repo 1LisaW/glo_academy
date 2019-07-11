@@ -22,7 +22,9 @@ let  depositCheckmark = document.querySelector('.deposit-checkmark');
 let  depositBank = document.querySelector('.deposit-bank');
 let  depositAmount = document.querySelector('.deposit-amount');
 let  depositPercent = document.querySelector('.deposit-percent');
-let  targetTitle= document.querySelector('.target-title');
 let  targetAmount = document.querySelector('.target-amount');
 let  periodSelect = document.querySelector('.period-select');
 let  periodAmount = document.querySelector('.period-amount');
+
+let incomeItems = document.querySelectorAll('.income-items'); 
+let expensesItems =document.querySelectorAll('.expenses-items');
