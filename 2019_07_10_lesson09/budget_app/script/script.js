@@ -51,11 +51,7 @@ let appData = {
             start.setAttribute('disabled','disabled');
             return;
         }
-        this.income ={};
-        this.addIncome= [];
-        this.expenses= {};
-        this.addExpenses = [];
-        this.expensesMonth = 0;
+
         this.budget = +salaryAmount.value;
         this.getExpenses();
         this.getExpensesMonth();
@@ -76,10 +72,17 @@ let appData = {
         allInput.forEach(function(item){
             item.setAttribute('disabled','disabled');
             });
-                    reset.addEventListener('click', appData.reset);
+                    reset.addEventListener('click', appData.reset.bind(appData));
 
         },
         reset : function(){
+            this.income ={};
+            this.addIncome= [];
+            this.expenses= {};
+            this.addExpenses = [];
+            this.expensesMonth = 0;
+            this.budget =0;
+            this.budgetMonth =0;
             let reset = document.querySelector('#reset');
             document.querySelectorAll('input').forEach((item)=>item.value= '');
             let allInput = document.querySelectorAll('input[type=text] ');
