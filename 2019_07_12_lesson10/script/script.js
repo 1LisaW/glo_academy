@@ -22,7 +22,7 @@ function DomElement(selector,options){
             newDiv.id =selector.replace('#','');
             this.cssText(newDiv);    
         }
-        newDiv.textContent ='new object '+selector;
+        newDiv.textContent =selector.replace(/[#.]/g,'');
         document.body.appendChild(newDiv);
     };
     this.cssText = function(elem){
@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 let moving = function(e){
     let squareFrom = document.querySelector('.square');
+    squareFrom.textContent ='';
     let squareStyle = window.getComputedStyle(document.querySelector('.square'));
     let left = parseInt(squareStyle.marginLeft);
     let top = parseInt(squareStyle.marginTop);
