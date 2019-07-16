@@ -1,0 +1,17 @@
+.wrapper-game{
+    position: relative;
+    display: grid;
+    grid-template-areas: 'left right';
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    width: 80%;
+    height: 70%;
+}
+
+.left-player{
+    grid-area: left;
+}
+
+.right-player{
+    grid-area: right;
+}
