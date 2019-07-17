@@ -5,25 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style src ='./style.css'></style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class ='score'>
-        <div class='counter'></div>
-        <div class= 'result'></div>
-    </div>
+   
+    <div class="score-board">
+            <div class='score-title'>user/comp</div>
+            <span id='user-score'>0</span> :
+            <!-- span is for inline and div is for block* -->
+            <span id='computer-score'>0</span>
+          </div>
+          <div class='result'>
+            <p>paper covers rock. You win!</p>
+          </div>
     <div class="wrapper-game">
         <div class="left-player">
-            <a class="left-first-hand"></a>
-            <a class="left-second-hand"></a>
-            <a class="left-third-hand"></a> 
+            <div class="left-hand paper">
+                <!-- <img src="./img/left-hand.png"> -->
+            </div>
+            <div class="left-hand rock">
+                <!-- <img src="./img/left-rock.png"> -->
+            </div>
+            <div class="left-hand scissor">
+                <!-- <img src="./img/left-scissor.png"> -->
+            </div> 
         </div>
         <div class="right-player">
-                <a class="right-first-hand"></a>
-                <a class="right-second-hand"></a>
-                <a class="right-third-hand"></a> 
+                <div class="right-hand paper">
+                    
+                    <!-- <img src="./img/right-paper.png"> -->
+                </div>
+                <div class="right-hand rock">
+                    <!-- <img src="./img/right-rock.png"> -->
+                </div>
+                <div class="right-hand scissor">
+                    <!-- <img src="./img/right-scissors.png"> -->
+                </div> 
         </div>
     </div>
-    
+   <script src='./script.js'></script> 
 </body>
 </html>
