@@ -130,6 +130,7 @@ class AppDataClass {
             cloneItem.querySelector(`.${subclassName}-title`).value='';
             cloneItem.querySelector(`.${subclassName}-amount`).value='';
             items[0].parentNode.insertBefore(cloneItem, buttonName);
+            this.checkCorrectVale();
          
             items = document.querySelectorAll(`.${subclassName}-items`);
             if (items.length === 3){
@@ -248,6 +249,22 @@ class AppDataClass {
         calcPeriod(){
             incomePeriodValue.value = this.budgetMonth* periodSelect.value;
         }
+        checkCorrectVale(){
+            let inputBlocks = document.querySelectorAll('[placeholder="Наименование"]');
+            inputBlocks.forEach(function(item){
+                item.addEventListener('input',()=> {
+                    item.value = item.value.replace(/[^а-яА-Я,.!? \-;:]/g,'');
+                });
+            
+            });
+            let inputNumberBlocks = document.querySelectorAll('[placeholder="Сумма"]');
+            inputNumberBlocks.forEach(function(item){
+                item.addEventListener('input',()=> {
+                item.value = item.value.replace(/[^0-9]/g,'');
+            });
+            
+            });
+        }
 
         eventsListeners(){
             const self =this;
@@ -277,6 +294,7 @@ class AppDataClass {
             
             
             });
+            this.checkCorrectVale();
             start.addEventListener('click', this.start.bind(this)); 
             expensesPlus.addEventListener('click', ()=>{expensesItems = 
                 this.addBlock(expensesItems,'expenses',expensesPlus);});
@@ -286,20 +304,7 @@ class AppDataClass {
             
     
             periodSelect.addEventListener('change',this.changeRange);
-            let inputBlocks = document.querySelectorAll('[placeholder="Наименование"]');
-            inputBlocks.forEach(function(item){
-                item.addEventListener('input',()=> {
-                    item.value = item.value.replace(/[^а-яА-Я,.!? \-;:]/g,'');
-                });
             
-            });
-            let inputNumberBlocks = document.querySelectorAll('[placeholder="Сумма"]');
-            inputNumberBlocks.forEach(function(item){
-                item.addEventListener('input',()=> {
-                item.value = item.value.replace(/[^0-9]/g,'');
-            });
-            
-            });
             salaryAmount.addEventListener('change',()=>{start.removeAttribute('disabled');});
         }
 }
@@ -319,10 +324,9 @@ const objForCookie={
 
   };
 
-function setCookie(name, value, options) {
-    options = options || {};
+function setCookie(name, value, options={}) {
   
-    var expires = options.expires;
+    let expires = options.expires;
   
     if (typeof expires == "number" && expires) {
       var d = new Date();
@@ -335,11 +339,11 @@ function setCookie(name, value, options) {
   
     value = encodeURIComponent(value);
   
-    var updatedCookie = name + "=" + value;
+    let updatedCookie = name + "=" + value;
   
-    for (var propName in options) {
+    for (let propName in options) {
       updatedCookie += "; " + propName;
-      var propValue = options[propName];
+      let propValue = options[propName];
       if (propValue !== true) {
         updatedCookie += "=" + propValue;
       }
