@@ -484,7 +484,8 @@ function setCookie(name, value, options={}) {
                 incomeItems[0].querySelector('.income-amount').value= item.cashIncome;
               }
               else{
-                  appData.addBlock(incomeItems,'income-items .income',buttonsPlusIncome,item.itemIncome, item.cashIncome);
+                  appData.addBlock(incomeItems,'income-items .income',
+                  buttonsPlusIncome,item.itemIncome, item.cashIncome);
               }
               counter++;
             });
@@ -496,7 +497,8 @@ function setCookie(name, value, options={}) {
                 expensesItems[0].querySelector('.expenses-amount').value= item.cashExpenses;
               }
               else{
-                  appData.addBlock(expensesItems,'expenses-items .expenses', expensesPlus,item.itemExpenses, item.cashExpenses);
+                  appData.addBlock(expensesItems,'expenses-items .expenses', 
+                  expensesPlus,item.itemExpenses, item.cashExpenses);
               }
               counter++;
             });

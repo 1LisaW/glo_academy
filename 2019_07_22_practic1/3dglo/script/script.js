@@ -88,21 +88,15 @@ const toggleMenu =()=>{
           
         
         }
-        function isMobile() {
-            return navigator.userAgent.match(
-                /Android|iPhone|iPad|iPod|kindle|Tablet|BlackBerry|mobile|Windows Phone|Opera Mini/i
-            );
-        }
+
+        // const popupClose = document.querySelector('.popup-close');
         popupBtn.forEach((elem)=>{
             elem.addEventListener('click', ()=>{
-                if (!isMobile()){
                 popupContent.style.top ='-100%';
+                console.log(popup.style.top);
                 popup.style.display='block';
                 requestAnimationFrame(step);
-                counter=-80;}
-                else{
-                    popup.style.display='block';
-                }
+                counter=-80;
             });
         });
         popup.addEventListener('click',(event)=>{
@@ -183,3 +177,17 @@ document.addEventListener('click',(event)=>{
         });
     };
     tabs();
+
+    //слайдер
+
+    const slider = () => {
+        const slide = document.querySelectorAll('.portfolio-item');
+        const btn = document.querySelectorAll('.portfolio-btn');
+        const dot = document.querySelectorAll('.dot');
+        const slider = document.querySelector('.portfolio-content');
+
+        let currentSlide = 0;
+
+        // const autoPlaySlide = ()
+        
+    }
