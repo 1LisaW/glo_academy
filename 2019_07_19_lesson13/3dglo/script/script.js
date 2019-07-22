@@ -44,10 +44,10 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 
 const toggleMenu =()=>{
-    const btnMenu= document.querySelector('.menu');
+    // const btnMenu= document.querySelector('.menu');
     const menu = document.querySelector('menu');
-    const closeBtn = document.querySelector('.close-btn');
-    const menuItems = menu.querySelectorAll('ul>li');
+    // const closeBtn = document.querySelector('.close-btn');
+    // const menuItems = menu.querySelectorAll('ul>li');
     const handlerMenu = ()=>{
         menu.classList.toggle('active-menu');
         // if (!menu.style.transform || menu.style.transform === 'translate(-100%)'){
@@ -60,7 +60,7 @@ const toggleMenu =()=>{
         let target = event.target;
         if ( target.closest('.menu')|| target.classList.contains('close-btn')||
         target.closest(' ul>li')||
-        (menu.classList.contains('active-menu')&& target.closest('menu')==null)){
+        (menu.classList.contains('active-menu'))){
             menu.classList.toggle('active-menu');
         } 
 
@@ -122,6 +122,9 @@ const toggleMenu =()=>{
     };
 
 function scrollToTarget(targetSelector){
+    if (document.querySelector(targetSelector) == null ){
+        return;
+    }
     const targetY = document.querySelector(targetSelector).getBoundingClientRect().top;
     const startY =  window.pageYOffset;
     const totalDiffY = Math.abs(targetY - startY);

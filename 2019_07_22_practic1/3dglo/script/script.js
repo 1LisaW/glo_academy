@@ -188,6 +188,27 @@ document.addEventListener('click',(event)=>{
 
         let currentSlide = 0;
 
-        // const autoPlaySlide = ()
+        const prevSlide = () => {
+            slide[currentSlide].classList.remove('.portfolio-item-active');
+        };
+        const nextSlide = () => {
+            slide[currentSlide].classList.add('.portfolio-item-active');
+        }
+
+        const autoPlaySlide = () => {
+            prevSlide();
+            currentSlide++;
+            if (currentSlide == slide.length){
+                currentSlide = 0;
+            }
+            nextSlide();
+        };
+            const startSlide =() => {
+
+            };
+            const stopSlide = () => {
+
+            }
+        
         
     }
