@@ -1,0 +1,28 @@
+
+.wrapper{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 70%;
+}
+.object{
+    display: block;
+    position: absolute;
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%
+}
+
+
+
+button{
+
+    width:200px;
+    margin: 10px 10px;
+    display: inline-block;
+
+}
+.reload-object{
+    display: none;
+}
