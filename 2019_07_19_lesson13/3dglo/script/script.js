@@ -59,7 +59,7 @@ const toggleMenu =()=>{
     document.addEventListener('click', (event)=>{
         let target = event.target;
         if ( target.closest('.menu')|| target.classList.contains('close-btn')||
-        target.closest(' ul>li')||
+        target.closest('menu ul>li')||
         (menu.classList.contains('active-menu'))){
             menu.classList.toggle('active-menu');
         } 
@@ -122,7 +122,7 @@ const toggleMenu =()=>{
     };
 
 function scrollToTarget(targetSelector){
-    if (document.querySelector(targetSelector) == null ){
+    if (targetSelector.length === 1 || document.querySelector(targetSelector) == null ){
         return;
     }
     const targetY = document.querySelector(targetSelector).getBoundingClientRect().top;

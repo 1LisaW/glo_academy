@@ -44,10 +44,10 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 
 const toggleMenu =()=>{
-    const btnMenu= document.querySelector('.menu');
+    // const btnMenu= document.querySelector('.menu');
     const menu = document.querySelector('menu');
-    const closeBtn = document.querySelector('.close-btn');
-    const menuItems = menu.querySelectorAll('ul>li');
+    // const closeBtn = document.querySelector('.close-btn');
+    // const menuItems = menu.querySelectorAll('ul>li');
     const handlerMenu = ()=>{
         menu.classList.toggle('active-menu');
         // if (!menu.style.transform || menu.style.transform === 'translate(-100%)'){
@@ -59,8 +59,8 @@ const toggleMenu =()=>{
     document.addEventListener('click', (event)=>{
         let target = event.target;
         if ( target.closest('.menu')|| target.classList.contains('close-btn')||
-        target.closest(' ul>li')||
-        (menu.classList.contains('active-menu')&& target.closest('menu')==null)){
+        target.closest('menu ul>li')||
+        (menu.classList.contains('active-menu'))){
             menu.classList.toggle('active-menu');
         } 
 
@@ -116,6 +116,9 @@ const toggleMenu =()=>{
     };
 
 function scrollToTarget(targetSelector){
+    if ( targetSelector==='#' || document.querySelector(targetSelector)== null){
+        return;
+    }
     const targetY = document.querySelector(targetSelector).getBoundingClientRect().top;
     const startY =  window.pageYOffset;
     const totalDiffY = Math.abs(targetY - startY);
@@ -183,32 +186,91 @@ document.addEventListener('click',(event)=>{
     const slider = () => {
         const slide = document.querySelectorAll('.portfolio-item');
         const btn = document.querySelectorAll('.portfolio-btn');
+        const portfolioDots = document.querySelector('.portfolio-dots');
+        for ( let i =0; i< slide.length; i++){
+            let newDot = document.createElement('li');
+            newDot.classList.add('dot');
+            if ( i ===0 ) {
+                newDot.classList.add('.dot-active');
+            }
+            portfolioDots.appendChild(newDot);
+
+        }
         const dot = document.querySelectorAll('.dot');
         const slider = document.querySelector('.portfolio-content');
 
         let currentSlide = 0;
+        let interval;
 
-        const prevSlide = () => {
-            slide[currentSlide].classList.remove('.portfolio-item-active');
+        const prevSlide = (elem, index, strClass) => {
+            elem[index].classList.remove(strClass);
         };
-        const nextSlide = () => {
-            slide[currentSlide].classList.add('.portfolio-item-active');
-        }
+        const nextSlide = (elem, index, strClass) => {
+            elem[index].classList.add(strClass);
+        };
 
         const autoPlaySlide = () => {
-            prevSlide();
+            prevSlide(slide, currentSlide, 'portfolio-item-active');
+            prevSlide(dot, currentSlide, 'dot-active');
             currentSlide++;
             if (currentSlide == slide.length){
                 currentSlide = 0;
             }
-            nextSlide();
+            nextSlide(slide, currentSlide, 'portfolio-item-active');
+            nextSlide(dot, currentSlide, 'dot-active');
         };
-            const startSlide =() => {
+            const startSlide =(time = 3000) => {
+                interval = setInterval(autoPlaySlide, time);
 
             };
             const stopSlide = () => {
+                clearInterval( interval );
 
-            }
+            };
+            slider.addEventListener( 'click', (event) =>{
+                event.preventDefault();
+                let target = event.target;
+                if (!target.matches('.portfolio-btn, .dot')){
+                    return;
+                }
+
+                prevSlide(slide, currentSlide, 'portfolio-item-active');
+                prevSlide( dot, currentSlide, 'dot-active');
+                if (target.matches('#arrow-right')){
+                    currentSlide++;
+                }
+                else if (target.matches('#arrow-left')){
+                    currentSlide--;
+                }
+                else if (target.matches('.dot')){
+                    dot.forEach( (elem, index) => {
+                        if (elem === target){
+                            currentSlide =index;
+                        }
+                    });
+                }
+                if (currentSlide >= slide.length){
+                    currentSlide =0;
+                }
+                if (currentSlide<0){
+                    currentSlide= slide.length -1;
+                }
+                nextSlide(slide, currentSlide, 'portfolio-item-active');
+                nextSlide( dot, currentSlide, 'dot-active');
+            });
+            slider.addEventListener( 'mouseover', (event) =>{
+                if (event.target.matches('.portfolio-btn')||event.target.matches('.dot')){
+                    stopSlide();
+                }
+
+            });
+            slider.addEventListener( 'mouseout', (event) =>{
+                if (event.target.matches('.portfolio-btn')||event.target.matches('.dot')){
+                    startSlide();
+                }
+            });
+            startSlide(1500);
         
-        
-    }
+    };
+    
+    slider();
