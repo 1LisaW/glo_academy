@@ -1,0 +1,11 @@
+.validator_success{
+    border: 2px solid green;
+}
+
+.validator_error{
+    border: 2px solid red;
+}
+.validator-block-error{
+    font-size: 12px;
+    color: red;
+}
