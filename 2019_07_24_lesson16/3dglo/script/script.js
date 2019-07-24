@@ -1,7 +1,7 @@
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', () => {
     'use strict';
     //Timer
-    function countTimer(deadline){
+    const countTimer = (deadline)=>{
         let useGMT = false;
         let diff = new Date().getTimezoneOffset()*60000;
         
@@ -9,12 +9,12 @@ window.addEventListener('DOMContentLoaded', function(){
         let timerMinutes = document.querySelector('#timer-minutes');
         let timerSeconds = document.querySelector('#timer-seconds');
 
-        function getTimeRemaining(){
+        const getTimeRemaining = () => {
             let dateStop =new Date(deadline).getTime();
             let dateNow = new Date().getTime();
             let timeRemaining = (dateStop - dateNow) / 1000;
             if (useGMT){
-                getGTMTime(dateStop, dateNow);
+                // getGTMTime(dateStop, dateNow);
                 dateNow = new Date().getTime()+diff;
                 dateStop =new Date(dateNow).setHours(24,0,0);
             }
@@ -26,19 +26,19 @@ window.addEventListener('DOMContentLoaded', function(){
                 useGMT = true;
             }
             return  { timeRemaining, hours, minutes, seconds};
-}
-        function getGTMTime(dateStop,dateNow){
+};
+        // function getGTMTime(dateStop,dateNow){
              
-             return;
-        }
-        function updateClock(){
+        //      return;
+        // }
+        const updateClock = () => {
             let timer = getTimeRemaining();
             timerHours.textContent = timer.hours > 9 ? timer.hours : '0' + timer.hours;
             timerMinutes.textContent = timer.minutes > 9 ? timer.minutes : '0' + timer.minutes;
             timerSeconds.textContent = timer.seconds > 9 ? timer.seconds : '0' + timer.seconds;
-        }
+        };
         let timerId = setInterval(updateClock,1000);
-    }
+    };
     countTimer('20 july 2019');
     // setInterval(countTimer, 1000)
 });
@@ -79,7 +79,7 @@ const toggleMenu =()=>{
         const popupContent = document.querySelector('.popup-content');
         const popupBtn = document.querySelectorAll('.popup-btn');
         let counter;
-        function step (){
+        const step = () => {
             counter++;
             popupContent.style.top = counter*2+'%';
           if (counter<10){
@@ -87,12 +87,12 @@ const toggleMenu =()=>{
           }
           
         
-        }
-        function isMobile() {
+        };
+        const isMobile = () => {
             return navigator.userAgent.match(
                 /Android|iPhone|iPad|iPod|kindle|Tablet|BlackBerry|mobile|Windows Phone|Opera Mini/i
             );
-        }
+        };
         popupBtn.forEach((elem)=>{
             elem.addEventListener('click', ()=>{
                 if (!isMobile()){
@@ -121,7 +121,7 @@ const toggleMenu =()=>{
         });
     };
 
-function scrollToTarget(targetSelector){
+const scrollToTarget = (targetSelector) => {
     if (targetSelector.length === 1 || document.querySelector(targetSelector) == null ){
         return;
     }
@@ -132,7 +132,7 @@ function scrollToTarget(targetSelector){
     const dir = targetY > startY ? 1 : -1;
     const pxInMs = 2;
 
-    const animationFrame= function(){
+    const animationFrame = () => {
         const diffTime = Date.now() - startTime;
         const diffY = diffTime * pxInMs;
         const y = startY + dir * diffY;
@@ -144,7 +144,7 @@ function scrollToTarget(targetSelector){
         }
     };
     requestAnimationFrame(animationFrame); 
-}   
+};   
 
 const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]'));
 
@@ -263,17 +263,11 @@ document.addEventListener('click',(event)=>{
                 nextSlide(slide, currentSlide, 'portfolio-item-active');
                 nextSlide( dot, currentSlide, 'dot-active');
             });
-            slider.addEventListener( 'mouseover', (event) =>{
-                if (event.target.matches('.portfolio-btn')||event.target.matches('.dot')){
-                    stopSlide();
-                }
-
-            });
-            slider.addEventListener( 'mouseout', (event) =>{
-                if (event.target.matches('.portfolio-btn')||event.target.matches('.dot')){
-                    startSlide();
-                }
-            });
+            slider.addEventListener( 'mouseover', (event) =>
+            event.target.matches('.portfolio-btn')||event.target.matches('.dot') ? stopSlide() : null);
+            slider.addEventListener( 'mouseout', (event) =>
+            event.target.matches('.portfolio-btn')||event.target.matches('.dot') ? startSlide() : null);
+                
             startSlide(1500);
         
     };
@@ -282,11 +276,11 @@ document.addEventListener('click',(event)=>{
 
     const commandPhoto = () => {
         const blockCommand = document.querySelector('.command');
-        function getChangeImg(target){
+        const getChangeImg = (target) => {
             let getChangedItem = target.src;
             target.src = target.dataset.img;
             target.dataset.img = getChangedItem;
-        }
+        };
         blockCommand.addEventListener('mouseover', (event) =>{
             const target = event.target;
             if (target.matches('.command__photo')){
@@ -333,12 +327,12 @@ document.addEventListener('click',(event)=>{
             } else{
             total = 0;
             }
-            const animation = function(){
+            const animation = () => {
                 let totalNumber = +document.getElementById('total').textContent;
                 const counter = totalValue.textContent;
                 const iter = Math.ceil(Math.abs(totalNumber-total)/20);
 
-                if (Math.abs(total - totalNumber)<1){
+                if (Math.abs(total - totalNumber)<iter){
                     totalNumber = total;
                     totalValue.textContent = +total;
                 }
@@ -370,17 +364,5 @@ document.addEventListener('click',(event)=>{
             }
         });
     };
-    // const animationFrame= function(){
-    //     const diffTime = Date.now() - startTime;
-    //     const diffY = diffTime * pxInMs;
-    //     const y = startY + dir * diffY;
-    //     window.scrollTo(0,y);
-    //     if ( diffY < totalDiffY){
-    //         requestAnimationFrame(animationFrame);
-    //     } else {
-    //         window.scrollTo(0, targetY);
-    //     }
-    // };
-    // requestAnimationFrame(animationFrame); 
 
     calculator();
