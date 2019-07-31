@@ -1,0 +1,23 @@
+{
+  "name": "cities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db_cities.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server db_cities.json -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1LisaW/glo_academy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1LisaW/glo_academy/issues"
+  },
+  "homepage": "https://github.com/1LisaW/glo_academy#readme",
+  "dependencies": {
+    "json-server": "^0.15.0"
+  }
+}
