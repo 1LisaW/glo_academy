@@ -400,29 +400,37 @@ document.addEventListener('click',(event)=>{
                 body[val[0]] = val[1];
             }
             postData(body)
-                .then( (response) =>{
-                    if (response.status !==200){
-                        throw new Error('status network not 200');
-                    }
-                    statusMessage.textContent = successMessage;
-                })
-                .catch( (error) => {
-                    statusMessage.textContent = errorMessage;
-                    console.error(error);
-                });
+                .then( result =>{
+                 statusMessage.innerHTML = '<img src="./images/Commons-emblem-success.svg">';})
+                    .catch(() =>{
+                        statusMessage.innerHTML = '<img src="./images/error-icon.png">'; });
 
            
         });
         const postData = (body) => {
-            return fetch('./server.php',{
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
+            return new Promise((resolve, reject) =>{
+                const  request = new XMLHttpRequest();
+                request.addEventListener('readystatechange', () => {
+                    statusMessage.textContent = loadMessage;
+                    if (request.readyState !== 4){
+                        return;
+                    }
+                    if (request.status === 200){
+                        resolve();
+                        form.querySelectorAll('input').forEach( item => item.value ='');
+                    } 
+                    else{
+                        reject(request.status);
+                    }
+                });
+                request.open('POST', './server.php');
+                request.setRequestHeader('Content-Type', 'application/json');
+            
+                request.send(JSON.stringify(body));
             });
+            
         };
-       
+
     };
 
     sendForm();
