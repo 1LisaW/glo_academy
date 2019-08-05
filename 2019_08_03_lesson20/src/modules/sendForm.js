@@ -34,10 +34,15 @@
                     throw new Error('status network not 200');
                 }
                 statusMessage.textContent = successMessage;
+                const inputs = document.querySelectorAll('input');
+                inputs.forEach(item => {
+                    item.value = '';
+                });
             })
             .catch( (error) => {
                 statusMessage.textContent = errorMessage;
                 console.error(error);
+                
             });
     });
     const postData = (body) => {

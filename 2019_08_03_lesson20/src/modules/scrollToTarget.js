@@ -1,4 +1,4 @@
-const scrollToTarget = (targetSelector) => {
+const getScrollToTarget = (targetSelector) => {
     if (targetSelector.length === 1 || document.querySelector(targetSelector) == null ){
         return;
     }
@@ -25,12 +25,14 @@ const scrollToTarget = (targetSelector) => {
 
 const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]'));
 
+const scrollToTarget =()=>{
 document.addEventListener('click',(event)=>{
     let target = event.target.closest('a');
     if (target && target.getAttribute('href').startsWith('#')){
         event.preventDefault();
-        scrollToTarget(target.getAttribute('href'));
+        getScrollToTarget(target.getAttribute('href'));
     }
 });
+};
 
 export default scrollToTarget;

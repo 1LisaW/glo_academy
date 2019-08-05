@@ -15,9 +15,11 @@ import commandPhoto from './modules/commandPhoto';
 import calculator from './modules/calculator';
 import sendForm from './modules/sendForm';
 import getValidUserData from './modules/getValidUserData';
+import scrollToTarget from './modules/scrollToTarget';
 
 elementClosest(window);
 countTimer('20 july 2019');
+scrollToTarget();
 toggleMenu();
 togglePopup();
 tabs();
