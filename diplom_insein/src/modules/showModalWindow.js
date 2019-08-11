@@ -20,7 +20,7 @@ const showModalWindow = (windowMod, name, checkMobile)=> {
                 else if( checkMobile&&isMobile()&&(item.closest('.active-mobile-support-btn')===null)){
                     item.classList.add('active-mobile-support-btn');
                 }else{
-                    windowMod.classList.add('active-modal-window');
+                    windowMod.classList.add('was-active-modal-window');
                     windowMod.style.cssText = "display:block;z-index:1000;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);width:70%";
                     if (checkMobile){
                         item.classList.remove('active-mobile-support-btn');
@@ -33,7 +33,6 @@ const showModalWindow = (windowMod, name, checkMobile)=> {
             const target = event.target;
             if ((target.closest('.modal-content')==null && !target.closest(`.main-${name}`))||(target === btnClose)){
                 windowMod.style.display = 'none';
-                windowMod.classList.remove('active-modal-window');
     
             }
         });

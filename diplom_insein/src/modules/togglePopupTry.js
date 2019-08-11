@@ -8,24 +8,25 @@ const togglePopupTry = () =>{
     showModalWindow(popupWindow,'try',false);
     document.addEventListener('DOMContentLoaded',()=>{
         setTimeout(()=>{
-            if (document.querySelector('.active-modal-window') === null){
-                popupWindow.classList.add('active-modal-window');
+            if (document.querySelector('.was-active-modal-window') === null){
+                popupWindow.classList.add('was-active-modal-window');
                 popupWindow.style.cssText = "display:block;z-index:1000;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);width:70%";
 
             }
         },60000);
     });
-    let isBtnClicked = false;
+    let stopListenerScroll = false;
     document.addEventListener('click', (event) =>{
         const target= event.target;
         if (target.tagName === 'BUTTON'){
-            isBtnClicked = true;
+            stopListenerScroll = true;
         }
     });
-    document.addEventListener('scroll',()=>{
+    document.addEventListener('scroll',(event)=>{
         
-            if (!isBtnClicked&&(document.body.clientHeight <= pageYOffset+window.innerHeight)){
-                popupWindow.classList.add('active-modal-window');
+            if (!stopListenerScroll&&(document.body.clientHeight <= pageYOffset+window.innerHeight)){
+                stopListenerScroll = true;
+                popupWindow.classList.add('was-active-modal-window');
                 popupWindow.style.cssText = "display:block;z-index:1000;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);width:70%";
 
             }
