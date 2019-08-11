@@ -2649,3 +2649,44 @@ textarea::placeholder {
 .toggle-news {
     display: none;
 }
+.dots {
+    position: relative;
+    /* bottom: 20px; */
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 5; 
+    padding-inline-start: 0}
+.dots .dot {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0px 10px;
+    border-radius: 50%;
+    border: solid rgb(63, 57, 57);
+    display: inline-block;
+    -webkit-transition: background-color, -webkit-transform 0.4s ease;
+    transition: background-color, -webkit-transform 0.4s ease;
+    transition: background-color, transform 0.4s ease;
+    transition: background-color, transform 0.4s ease, -webkit-transform 0.4s ease; }
+.dots .dot-active {
+    background-color: #19b5fe;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+.dots .dot:hover {
+    background-color: #53c6fe;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+.sl2-slide{
+    display: none;
+}
+.sl2-slide-active{
+    display: block;
+    /* width: 90%; */
+}
