@@ -2661,7 +2661,7 @@ textarea::placeholder {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    z-index: 5; 
+    /* /z-index: 5;  */
     padding-inline-start: 0}
 .dots .dot {
     cursor: pointer;
@@ -2689,4 +2689,8 @@ textarea::placeholder {
 .sl2-slide-active{
     display: block;
     /* width: 90%; */
+}
+
+.active-mobile-support-btn{
+    right: 30%;
 }

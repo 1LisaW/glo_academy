@@ -6,6 +6,8 @@ import calculator from './modules/calculator.js';
 import sliderCarusel from './modules/sliderCarusel.js';
 import slider2 from './modules/Slider2.js';
 import accordion from './modules/accordion.js';
+import getValidUserData from './modules/getValidUserData.js';
+import sendForm from './modules/sendForm.js';
 
 blockTextCorrector();
 scrollToTarget();
@@ -15,3 +17,5 @@ calculator();
 sliderCarusel();
 slider2();
 accordion();
+getValidUserData();
+sendForm();
