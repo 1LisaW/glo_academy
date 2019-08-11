@@ -3,7 +3,7 @@ const accordion = () => {
     const accordionQuestions = [...accordionBlock.querySelectorAll('p')];
     const accordionAnswer = [...document.querySelectorAll('.js-ui-accordion>div')];
 
-    accordionBlock.addEventListener('mouseover',(event) =>{
+    accordionBlock.addEventListener('click',(event) =>{
         const target = event.target;
         const index = accordionQuestions.findIndex(item=> target===item);
         if(index!== -1){
