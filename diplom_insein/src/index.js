@@ -8,7 +8,6 @@ import slider2 from './modules/Slider2.js';
 import accordion from './modules/accordion.js';
 import getValidUserData from './modules/getValidUserData.js';
 import sendForm from './modules/sendForm.js';
-import showModalWindow from './modules/showModalWindow.js';
 import scrollDocumentSlider from './modules/scrollDocumentSlider.js';
 
 blockTextCorrector();
@@ -21,5 +20,4 @@ slider2();
 accordion();
 getValidUserData();
 sendForm();
-showModalWindow();
 scrollDocumentSlider();
