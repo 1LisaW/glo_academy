@@ -4,13 +4,13 @@ const slider2 = () => {
     slider2.style.position ='relative';
 
     const buttonNext = document.createElement('img');
-    buttonNext.src ='/img/Block10/arrowright.png';
+    buttonNext.src ='./img/Block10/arrowright.png';
     buttonNext.id = 'arrow-right';
     buttonNext.classList.add('slider2-btn');
     buttonNext.style.cssText =`position:absolute;right:20px;top:50%;cursor: pointer`;
     slider2.insertAdjacentElement('beforeend',buttonNext);
     const buttonPrev = document.createElement('img');
-    buttonPrev.src ='/img/Block10/arrowleft.png';
+    buttonPrev.src ='./img/Block10/arrowleft.png';
     buttonPrev.id ='arrow-left';
     buttonPrev.classList.add('slider2-btn');
     buttonPrev.style.cssText ="position:absolute;left:20px;top:50%;cursor:pointer";

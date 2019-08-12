@@ -8,7 +8,7 @@ const calculator = (price = 100) => {
        
         const calcCountUsers = document.querySelector('.eight-excel-bot-price select');
         const calcMonth = document.querySelectorAll('[name="month"]');
-        const totalPrice =document.querySelector('.eight-excel-total');
+        const totalPrice =document.getElementById('total-price');
         const counterUsersValue = calcCountUsers.options[calcCountUsers.selectedIndex].value;
         const monthValue = [...calcMonth].find((item)=> item.checked === true).value.replace(/( мес.)/,''); 
         let totalSum = priceMap.get(counterUsersValue)*monthValue;

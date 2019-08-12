@@ -2,11 +2,11 @@ const sliderCarusel = () => {
     const slider = document.querySelector('.sl');
     const slides = [...document.querySelectorAll('.sl .sl-slide')];
     const buttonNext = document.createElement('img');
-    buttonNext.src ='/img/Block10/arrowright.png';
+    buttonNext.src ='./img/Block10/arrowright.png';
     buttonNext.style.cssText =`position:absolute;left:${document.documentElement.clientWidth-20}px`;
     slider.insertAdjacentElement('beforeend',buttonNext);
     const buttonPrev = document.createElement('img');
-    buttonPrev.src ='/img/Block10/arrowleft.png';
+    buttonPrev.src ='./img/Block10/arrowleft.png';
     buttonPrev.style.cssText ="position:absolute;left:20px";
     slider.insertAdjacentElement('afterbegin',buttonPrev);
 
