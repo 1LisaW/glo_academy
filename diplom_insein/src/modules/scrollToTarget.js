@@ -9,6 +9,7 @@ document.addEventListener('click',(event)=>{
         event.preventDefault();
         getScrollToTarget(target.getAttribute('href'));
     }
+    
 });
 };
 

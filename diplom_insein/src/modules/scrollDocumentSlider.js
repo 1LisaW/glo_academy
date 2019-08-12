@@ -47,16 +47,20 @@ const scrollDocumentSlider =()=>{
             
         }
         if (direction === 'top'){
-            if (window.pageYOffset<=window.innerHeight){
+            if (window.pageYOffset<=window.innerHeight*0.5){
                 document.querySelector('.two.two-mini').style.display ='none';
             }
         }
-        
+        if(window.pageYOffset > window.innerHeight*0.8){
+            const miniMenu = document.querySelector('.two.two-mini');
+            miniMenu.style.display ='flex';
+            miniMenu.querySelector('.container').style.display ='block';
+        }
     });
     document.addEventListener('DOMContentLoaded',()=>{ 
         if(window.pageYOffset > window.innerHeight*0.8){
             const miniMenu = document.querySelector('.two.two-mini');
-            miniMenu.style.display ='block';
+            miniMenu.style.display ='flex';
             miniMenu.querySelector('.container').style.display ='block';
         }
     });
