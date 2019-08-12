@@ -1,4 +1,4 @@
-import '@babel/polyfill';
+import 'core-js/stable';
 import 'nodelist-foreach-polyfill';
 import 'element-closest-polyfill';
 import 'formdata-polyfill';

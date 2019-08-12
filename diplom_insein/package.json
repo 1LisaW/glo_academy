@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
+    "core-js": "^3.2.1",
     "element-closest": "^3.0.1",
     "element-closest-polyfill": "^1.0.0",
     "fetch-polyfill": "^0.8.2",
