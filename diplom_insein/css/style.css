@@ -240,7 +240,8 @@ img {
 
 .two {
     background-color: #142025;
-    padding: 1rem 0
+    padding: 1rem 0;
+    max-height: 18%;
 }
 
 [alt="Logo"] {

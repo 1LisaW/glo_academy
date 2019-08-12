@@ -13,8 +13,15 @@ const scrollDocumentSlider =()=>{
     });
     let direction ='';
     
-    let once = 0;
-    document.addEventListener('wheel',(event)=>{
+    let wheelEvent = 'mousewheel';
+    // check not ie 11
+    if (document.onwheel !== undefined) {
+        // legacy event type
+        wheelEvent = 'wheel';
+    }
+    
+
+    document.addEventListener( wheelEvent,(event)=>{
 
         const checkOnScroll = () => {
             const delta = parseInt(event.wheelDelta || -event.detail);
