@@ -33,7 +33,9 @@ const getScrollToTarget = (targetSelector) => {
    
     requestAnimationFrame(animationFrame); 
     if(startY+targetY > window.innerHeight*0.8){
-        document.querySelector('.two.two-mini').style.display ='block';
+        const miniMenu = document.querySelector('.two.two-mini');
+        miniMenu.style.display ='block';
+        miniMenu.style.maxHeight ='30px';
     }
    
 };   

@@ -1,3 +1,11 @@
+import '@babel/polyfill';
+import 'nodelist-foreach-polyfill';
+import 'element-closest-polyfill';
+import 'formdata-polyfill';
+import 'fetch-polyfill';
+import 'ie-string-startswith-polyfill';
+import 'request-animation-frame-polyfill';
+
 import blockTextCorrector from './modules/blockTextCorrector.js';
 import scrollToTarget from './modules/scrollToTarget.js';
 import togglePopupTry from './modules/togglePopupTry.js';
