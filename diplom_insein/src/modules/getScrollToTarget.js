@@ -35,7 +35,7 @@ const getScrollToTarget = (targetSelector) => {
     if(startY+targetY > window.innerHeight*0.8){
         const miniMenu = document.querySelector('.two.two-mini');
         miniMenu.style.display ='block';
-        miniMenu.style.maxHeight ='30px';
+        miniMenu.querySelector('.container').style.display ='block';
     }
    
 };   

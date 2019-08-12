@@ -2,6 +2,8 @@ import getScrollToTarget from './getScrollToTarget.js';
 
 const scrollDocumentSlider =()=>{
 
+    document.querySelector('#main .container').style.display ='block';
+
     document.querySelector('section.three').id ='three';
     const arrOfSlides = [];
     // let localheight =0;
@@ -55,7 +57,7 @@ const scrollDocumentSlider =()=>{
         if(window.pageYOffset > window.innerHeight*0.8){
             const miniMenu = document.querySelector('.two.two-mini');
             miniMenu.style.display ='block';
-            miniMenu.style.maxHeight ='30px';
+            miniMenu.querySelector('.container').style.display ='block';
         }
     });
 };
