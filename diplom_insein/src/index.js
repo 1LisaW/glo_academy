@@ -19,6 +19,7 @@ import sendForm from './modules/sendForm.js';
 import scrollDocumentSlider from './modules/scrollDocumentSlider.js';
 import animateMoveToLink from './modules/animateMoveToLink.js';
 
+
 blockTextCorrector();
 scrollToTarget();
 togglePopupTry();

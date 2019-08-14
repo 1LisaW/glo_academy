@@ -92,6 +92,7 @@ html {
 
 body {
     position: relative;
+    opacity: 0;
 }
 
 button,
@@ -2715,7 +2716,7 @@ textarea::placeholder {
     transition: opacity 1s;
   }
 
-  .container-loading.container-loaded {
+.container-loaded {
     opacity: 1;
-    /* transition: opacity 1s; */
+    transition: opacity 1s;
   }

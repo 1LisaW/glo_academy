@@ -1,10 +1,12 @@
 
 
 const animateMoveToLink = () => {
-    window.onbeforeunload  = ()=>{
+  //  document.body.classList.add ('container-loading');
+    document.addEventListener('beforeunload',  ()=>{
+      
         document.body.classList.add('container-loading');
-    };
-      window.onloadstart =() =>{
+    });
+    document.addEventListener('DOMContentLoaded', () =>{
           if (document.querySelector('#main .container')){
             document.querySelector('#main .container').style.display ='block';
           } else{
@@ -12,7 +14,7 @@ const animateMoveToLink = () => {
 
           }
           document.body.classList.add('container-loaded');
-    };
+    });
 };
 
 export default animateMoveToLink;
