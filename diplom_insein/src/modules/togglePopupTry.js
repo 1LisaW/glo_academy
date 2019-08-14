@@ -2,6 +2,9 @@ import showModalWindow from './showModalWindow.js';
 
 const togglePopupTry = () =>{
     const popupWindow = document.querySelector('.modal_offer');
+    if ( popupWindow === null){
+        return;
+    }
     const btnQwestions = document.querySelector(`[onclick="location.href='faq.html'"]`);
     btnQwestions.classList.add('ignore-open-modal');
 

@@ -1,5 +1,8 @@
 const sliderCarusel = () => {
     const slider = document.querySelector('.sl');
+    if (slider === null){
+        return;
+    }
     const slides = [...document.querySelectorAll('.sl .sl-slide')];
     const buttonNext = document.createElement('img');
     buttonNext.src ='./img/Block10/arrowright.png';

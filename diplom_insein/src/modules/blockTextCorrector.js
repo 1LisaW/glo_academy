@@ -7,6 +7,9 @@ const blockTextCorrector = () =>{
     const blockNews = document.getElementById('twelve');
     const twelveNewsLeftShort = document.createElement('p');
     const imgTwelveNewsLeft = document.querySelector('.twelve-news-left img');
+    if (imgTwelveNewsLeft === null){
+        return;
+    }
     const imgTwelveNewsRight = document.querySelector('.twelve-news-right img');
     twelveNewsLeftShort.innerText = twelveNewsLeft.innerText.slice(0,49)+'...';
     twelveNewsLeftShort.classList.add('toggle-news');

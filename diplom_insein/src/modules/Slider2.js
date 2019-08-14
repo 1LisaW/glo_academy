@@ -1,5 +1,8 @@
 const slider2 = () => {
     const slider2 = document.querySelector('.sl2');
+    if (slider2 === null){
+        return;
+    }
     const slides = [...document.querySelectorAll('.sl2-slide')];
     slider2.style.position ='relative';
 

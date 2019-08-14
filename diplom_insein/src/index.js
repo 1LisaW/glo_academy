@@ -1,10 +1,10 @@
-import 'core-js/stable';
-import 'nodelist-foreach-polyfill';
-import 'element-closest-polyfill';
-import 'formdata-polyfill';
-import 'fetch-polyfill';
-import 'ie-string-startswith-polyfill';
-import 'request-animation-frame-polyfill';
+// import 'core-js/stable';
+// import 'nodelist-foreach-polyfill';
+// import 'element-closest-polyfill';
+// import 'formdata-polyfill';
+// import 'fetch-polyfill';
+// import 'ie-string-startswith-polyfill';
+// import 'request-animation-frame-polyfill';
 
 import blockTextCorrector from './modules/blockTextCorrector.js';
 import scrollToTarget from './modules/scrollToTarget.js';
@@ -17,6 +17,7 @@ import accordion from './modules/accordion.js';
 import getValidUserData from './modules/getValidUserData.js';
 import sendForm from './modules/sendForm.js';
 import scrollDocumentSlider from './modules/scrollDocumentSlider.js';
+import animateMoveToLink from './modules/animateMoveToLink.js';
 
 blockTextCorrector();
 scrollToTarget();
@@ -29,3 +30,4 @@ accordion();
 getValidUserData();
 sendForm();
 scrollDocumentSlider();
+animateMoveToLink();

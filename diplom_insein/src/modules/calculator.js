@@ -3,6 +3,9 @@ const calculator = (price = 100) => {
     const priceArray =[["1",1000],["2",1900],["3",2700],["5",4500],["7",6000],["10",8000],["more",10000]];
     const priceMap =new Map(priceArray);
     const calcBlock = document.querySelector('.eight-excel.card');
+    if (calcBlock === null){
+        return;
+    }
     
     const countSum = () => {
        

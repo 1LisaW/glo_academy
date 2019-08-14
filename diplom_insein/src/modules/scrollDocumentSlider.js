@@ -1,6 +1,9 @@
 import getScrollToTarget from './getScrollToTarget.js';
 
 const scrollDocumentSlider =()=>{
+    if ( document.querySelector('#main .container') === null){
+        return;
+    }
 
     document.querySelector('#main .container').style.display ='block';
 

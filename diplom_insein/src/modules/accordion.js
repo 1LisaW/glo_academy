@@ -1,4 +1,7 @@
 const accordion = () => {
+    if ( document.location.href.match(/faq\.html/gi) !== null){
+        return;
+    }
     const accordionBlock = document.querySelector('.js-ui-accordion');
     const accordionQuestions = [...accordionBlock.querySelectorAll('p')];
     const accordionAnswer = [...document.querySelectorAll('.js-ui-accordion>div')];

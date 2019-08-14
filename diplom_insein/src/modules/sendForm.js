@@ -5,6 +5,9 @@
     const successMessage ='Сообщение отправлено.С вами свяжутся в ближайшее время.';
     const formPopupSupport = document.querySelector('.modal_support form');
     const formPopupTry = document.querySelector('.modal_offer form');
+    if (formPopupSupport === null || formPopupTry === null){
+        return;
+    }
     const buttonTry = formPopupTry.querySelector('button');
     buttonTry.classList.add('ignore-open-modal');
     const buttonSupport = formPopupSupport.querySelector('button');

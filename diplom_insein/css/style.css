@@ -2709,3 +2709,13 @@ textarea::placeholder {
 	height: auto;
   opacity: 1;
 }
+
+.container-loading {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .container-loading.container-loaded {
+    opacity: 1;
+    /* transition: opacity 1s; */
+  }
