@@ -5,7 +5,7 @@ const scrollDocumentSlider =()=>{
         return;
     }
 
-    document.querySelector('#main .container').style.display ='block';
+    
 
     document.querySelector('section.three').id ='three';
     const arrOfSlides = [];
